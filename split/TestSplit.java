@@ -16,7 +16,8 @@ public class TestSplit
 			}
 			else
 			{
-				a[i/2] = array[i] - '0';
+				a[i/2] = array[i] - '0';gjh,iyi=-=\-
+					
 			}
 		}
 

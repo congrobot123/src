@@ -28,7 +28,7 @@ public class TestSplit
 		
 		for(String temp2 : b)
 		{
-			System.out.println(temp2 + " ");
+			System.out.print(temp2 + " ");
 		}
 		System.out.println();
 	}

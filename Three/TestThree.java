@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class TestThree
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int count = sc.nextInt();
+
+		int[] a = new int[count];
+		
+		int i = 0;
+		for(; i<a.length; ++i)
+		{
+			a[i] = i+1;
+		}
+		
+		int count1 = 1;
+		int count2 = 0;
+		i = 0;
+		while(true)
+		{
+			if(a[i] != 0)
+			{
+				count2 = 0;
+				if(count1%3 == 0)
+				{
+					a[i] = 0;
+				}
+				count1++;
+				i++;
+			}
+			else
+			{
+				i++;
+				count2++;
+				if(count2 == a.length -1)
+				{
+					break;
+				}
+			}
+
+			if(i == a.length)
+			{
+				i = 0;
+			}
+		}
+
+		if(i == a.length)
+		{
+			System.out.println(a[0]);
+		}
+		else
+		{
+			System.out.println(a[i]);
+		}
+	}
+}

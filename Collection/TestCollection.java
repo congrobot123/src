@@ -54,5 +54,16 @@ public class TestCollection
 			System.out.println(temp);
 		}
 
+		System.out.println("\nLambda表达式遍历Iterator");
+		Iterator it2 = c1.iterator();
+		it2.forEachRemaining(obj -> System.out.println("迭代集合元素：" + obj));
+		
+		System.out.println("\n使用foreach循环遍历集合元素");
+		for(Object obj : c1)
+		{
+			System.out.println((String)obj);
+			//c1.remove(obj);
+		}
+	
 	}
 }

@@ -2,77 +2,23 @@ public class TestAbstract
 {
 	public static void main(String[] args) 
 	{
-		Apple apple = new Apple(2, "red", 5);
-		apple.test2();
+		System.out.println("Hello World!");
 	}
 }
 
-class OBJECT
+interface Test
 {
-	public void test()
+	int MAXSIZE = 100;
+
+	void fun1();
+
+	public default void fun2()
 	{
-		System.out.println("OBJECT test()");
-	}
-
-	public void test1()
-	{
-		System.out.println("OBJECT test1()");
-	}
-
-}
-
-abstract class Fruit extends OBJECT
-{
-	private int weight;
-	private String color;
-
-	public void test()
-	{
-		System.out.println("Fruit test()");
-	}
-
-	public void test3()
-	{
-		super.test();
+		System.out.println("fun2()");
 	}
 	
- 
-	public abstract int GetPrice();
-
-	public static Fruit getInstance()
+	static void fun3()
 	{
-		Fruit fruit = new Apple(2, "red", 5);
-		return fruit;
-	}
-
-	public Fruit(int weight, String color)
-	{
-		this.weight = weight;
-		this.color = color;
+		System.out.println("fun3()");
 	}
 }
-
-class Apple extends Fruit
-{
-	private int price;
-	
-	public int GetPrice()
-	{
-		return price;
-	}
-
-	public void test2()
-	{
-		super.test1();
-		super.super.test();
-		super.test();
-	}
-	
-	public Apple(int weight, String color, int price)
-	{
-		super(weight, color);
-		this.price = price;
-	}
-}
-
-

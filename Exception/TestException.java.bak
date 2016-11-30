@@ -11,7 +11,17 @@ public class TestException
 	{
 		try
 		{
-			fun2(s);
+			int a = Integer.parseInt(s[0]);
+			int b = Integer.parseInt(args[1]);
+
+			int temp = a / b;
+			System.out.println(temp);
+		}
+		catch (NumberFormatException e | ArithmeticException e | IndexOutOfBoundsException e)
+		{
+			e = null;
+			e.printStackTrace();
+			return;
 		}
 		catch (Exception e)
 		{
@@ -20,15 +30,5 @@ public class TestException
 		}
 
 		System.out.println("finish");
-	}
-
-	public static void fun2(String[] s)
-		throws Exception
-	{
-			int a = Integer.parseInt(s[0]);
-			int b = Integer.parseInt(s[1]);
-
-			int temp = a / b;
-			System.out.println(temp);
 	}
 }

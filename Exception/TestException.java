@@ -17,18 +17,7 @@ public class TestException
 			int temp = a / b;
 			System.out.println(temp);
 		}
-		catch (IndexOutOfBoundsException e)
-		{
-			System.out.println("test1");
-			System.out.println(e.getMessage());
-			return;
-		}
-		catch (NumberFormatException e)
-		{
-			e.printStackTrace();
-			return;
-		}
-		catch (ArithmeticException e)
+		catch (NumberFormatException e | ArithmeticException e | IndexOutOfBoundsException e)
 		{
 			e.printStackTrace();
 			return;

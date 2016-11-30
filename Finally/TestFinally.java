@@ -4,56 +4,50 @@ public class TestFinally
 {
 	public static void main(String[] args)
 	{
-		FileInputStream fis = null;
-
 		try
 		{
-			fis = new FileInputStream("a.txt");
-			int a = Integer.parseInt(args[0]);
-			int b = Integer.parseInt(args[1]);
-			int temp = a / b;
-			System.out.println(temp);
-		}
-		catch (IndexOutOfBoundsException e)
-		{
-			System.out.println("test1");
-			//System.out.println(e.getMessage());
-			//return;
-			//System.exit(1);
-		}
-		catch (NumberFormatException e)
-		{
-			System.out.println("test2");
-			//e.printStackTrace();
-			return;
-		}
-		catch (ArithmeticException e)
-		{
-			System.out.println("test3");
-			//e.printStackTrace();
-			return;
+			fun(args);
 		}
 		catch (Exception e)
 		{
-			System.out.println("test4");
 			e.printStackTrace();
-			return;
 		}
-		finally
+		
+	}
+
+	public static void fun(String[] s)
+		throws MyException
+	{
+		try
 		{
-			System.out.println("test5");
-			if(fis != null)
-			{
-				try
-				{
-					fis.close();
-					return;
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
+			int a = Integer.parseInt(s[0]);
+			int b = Integer.parseInt(s[1]);
+			int temp = a / b;
+			System.out.println(temp);
 		}
+		catch (Exception e)
+		{
+			throw new MyException(e);
+		} 
 	}
 }
+
+class MyException extends Exception
+{
+	public MyException()
+	{
+	
+	}
+
+	public MyException(String msg)
+	{
+		super(msg);
+	}
+
+	public MyException(Throwable t)
+	{
+		super(t);
+	}
+}
+
+

@@ -1,0 +1,44 @@
+create table person_table
+(
+	name varchar(64) primary key,
+	age int,
+	gender varchar(16) not null,
+	remark varchar(64)
+);
+
+create table gender_table
+(
+	id int primay key,
+	gender varchar(16) not null,
+	unique (id),
+	unique (gender)
+);
+
+alter table person_table
+add
+(
+	id varchar(16) not null
+);
+
+alter table person_table
+modify id varchar(64) not null;
+
+alter table person_table
+drop id;
+
+alter table person_table
+rename to student_table;
+
+alter table student_table
+change gender sex varchar(16);
+
+drop table student_table;
+
+insert into person_table values ('zhangsan', 20, 'male', 'Test');
+
+update person_table
+set age = 21
+where name = 'zhangsan';
+
+delete from person_table
+where name = 'zhangsan';

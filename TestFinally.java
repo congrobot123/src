@@ -1,0 +1,46 @@
+import java.io.FileInputStream;
+
+public class TestFinally
+{
+	public static void main(String[] args) 
+	{
+		FileInputStream fis = null;
+
+		try
+		{
+			fis = new FileInputStream("a.txt");
+			int a = Integer.parseInt(args[0]);
+			int b = Integer.parseInt(args[1]);
+
+			int temp = a / b;
+			System.out.println(temp);
+		}
+		catch (IndexOutOfBoundsException e)
+		{
+			System.out.println("test1");
+			return;
+		}
+		catch (Exception e)
+		{
+			System.out.println("test4");
+			return;
+		}
+		finally
+		{
+			System.out.println("test5");
+
+			if(fis != null)
+			{
+				try
+				{
+					fis.close();
+				}
+				catch (Exception e)
+				{
+					System.out.println("test6");
+				}
+			}
+		}
+		
+	}
+}

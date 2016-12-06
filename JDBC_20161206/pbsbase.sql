@@ -1,0 +1,19 @@
+drop database if exists pbsbase;
+create database pbsbase;
+use pbsbase;
+
+create table student_table
+(
+	student_id int auto_increment primary key,
+	name varchar(16) not null,
+	telnum varchar(16) not null,
+	gender varchar(16) default 'UNKNOWN',
+	remark varchar(64),
+	unique(telnum),
+	unique (name)
+);
+
+insert into student_table values (null, 'lvchangxi', '12345678912',  "Male", 'lvchangxi info');
+insert into student_table values (null, 'lizuxiang', '12345678913',  "Male", 'lizuxiang info');
+insert into student_table values (null, 'gengrui', '12345678914',  "Female", 'gengrui info');
+

@@ -20,14 +20,14 @@ public class TestJDBC
 		try
 		(
 			//2、通过DriverManager获取数据库连接
-			Connection conn = DriverManager.getConnection("jdbc://localhost:3306/pbsbase", "root", "congrobot");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pbsbase", "root", "congrobot");
 
 			//3、通过Connection对象创建Statement对象
 			Statement stmt = conn.createStatement();
 		)
 		{
 			//4、使用Statement执行SQL语句
-			stmt.execute(sql);
+			stmt.executeQuery(sql);
 
 			//5、操作结果集
 			try

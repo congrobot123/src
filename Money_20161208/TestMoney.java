@@ -47,9 +47,18 @@ public class TestMoney
 				}
 				else
 				{
-					array1[i] = num[value];
-					++i;
-					++j;
+					if(j % 4 == 1)
+					{
+						array1[i] = unit[j];
+						i++;
+						j++;
+					}
+					else
+					{
+						array1[i] = num[value];
+						++i;
+						j++;
+					}
 				}
 			}
 			

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class TestException1  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		String str = sc.nextLine();
+
+		try
+		{
+			if(str.equals("I am 007"))
+			{
+				throw new Exception("亲爱的007，您好");
+			}
+			else
+			{
+				throw new Exception("对不起，请下次进入");
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+}

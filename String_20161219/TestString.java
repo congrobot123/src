@@ -1,0 +1,33 @@
+import java.io.StringReader;
+import java.io.IOException;
+
+
+public class TestString 
+{
+	public static void main(String[] args)
+		throws IOException
+	{
+		String str = "»ÆËÉËÉ huangsongsong" +
+						"¹¢Èñ   gengrui" +
+						"ÎâÓñÕä wuyuzhen" +
+						"ÍòÇì´ä wanqingcui" +
+						"ÂÀ²ýÏª lvchangxi" +
+						"ÐìÐ¡ÀÚ xuxiaolei";
+
+		char[] buffer = new char[16];
+		
+		try
+		(
+			StringReader sr = new StringReader(str);
+		)
+		{
+			int hasRead = 0;
+
+			while( (hasRead = sr.read(buffer)) >0 )
+			{
+				String temp = new String(buffer, 0, hasRead);
+				System.out.print(temp);
+			}
+		}
+	}
+}

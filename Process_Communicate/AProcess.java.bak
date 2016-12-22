@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class AProcess 
+{
+	public static void main(String[] args) 
+	{
+		
+		try
+		{
+			Process p = Runtime.getRuntime().exec("BProcess");
+
+			try
+			(
+				BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			)
+			{
+				String buf = null;
+				while((buf = br.readLine()) != null)
+				{
+					System.out.println("Get BProcess message:" + buf);
+				}
+			}
+			catch (IOException ioe)
+			{
+				ioe.printStackTrace();
+			}
+		}
+		catch (IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+}
+
+

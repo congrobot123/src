@@ -1,0 +1,17 @@
+aebcdpublic class TestRandomAccessFile 
+{
+	public static void main(String[] args) 
+	{
+		RandomAccessFile raf = new RandomAccessFile("a.txt", "rw");
+
+		byte[] buf = new byte[64];
+		int hasRead = 0;
+
+		while( (hasRead = raf.read(buf)) > 0)
+		{
+			
+		}
+
+
+	}
+}
